@@ -15,8 +15,16 @@ Each sample is licensed under the MIT license unless otherwise specified.
 ### Using Vagrant to launch Continuum trial image
 
 The easiest way to try Continuum locally on your machine is to use Vagrant. You can use the Vagrantfile in this repo under vagrant/ to launch Apcera Continuum trial VirtualBox image. Make sure your VitualBox and Vagrant tools are already [setup](http://docs.vagrantup.com/v2/getting-started/index.html). 
-To bring up the box, use "cd vagrant; vagrant up --provider=virtualbox". You will be prompted for the bridge interface. Typically picking "1" is safe. Then access the machine with "vagrant ssh"
-If your laptop's IP address gets updated, you can use "vagrant provision" to update the virtual machine. 
-To use Vmware Fusion, edit the Vagrantfile to uncomment the URL for Vmware, and launch with "vagrant up --provider=vmware_fusion".
+```
+$ git clone https://github.com/apcera/continuum-sample-apps
+$ cd vagrant
+$ cp continuum-setup.conf.template continuum-setup.conf
+```
+Update the continuum-setup.conf (pick domain name prefix portion that is unique)
+```
+$ vagrant up --provider=virtualbox
+$ vagrant ssh
+```
+To use Vmware Fusion, edit the Vagrantfile to uncomment the URL for Vmware, and launch with `vagrant up --provider=vmware_fusion`.
 
 
