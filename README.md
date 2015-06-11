@@ -25,6 +25,6 @@ Update the continuum-setup.conf (pick domain name prefix portion that is unique)
 $ vagrant up --provider=virtualbox
 $ vagrant ssh
 ```
-To use Vmware Fusion, edit the Vagrantfile to uncomment the URL for Vmware, and launch with `vagrant up --provider=vmware_fusion`.
+To use VMware, replace "virtualbox" with "vmware_fusion" or "vmware_workstation".
 
 
