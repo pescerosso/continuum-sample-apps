@@ -28,11 +28,11 @@ class VagrantHelper
 
   def setup_box(config)
     if virtualbox?
-      config.vm.box_url = "https://d1g23m5c3hjtbv.cloudfront.net/#{VIRTUALBOX_BOX}.box"
+      config.vm.box_url = ENV['VAGRANT_BOX_URL'] ? ENV['VAGRANT_BOX_URL'] : "https://d1g23m5c3hjtbv.cloudfront.net/#{VIRTUALBOX_BOX}.box"
       config.vm.box_download_checksum_type = 'sha256'
       config.vm.box_download_checksum = VIRTUALBOX_CHECKSUM256
     elsif fusion? || workstation?
-      config.vm.box_url = "https://d1g23m5c3hjtbv.cloudfront.net/#{VMWARE_BOX}.box"
+      config.vm.box_url = ENV['VAGRANT_BOX_URL'] ? ENV['VAGRANT_BOX_URL'] : "https://d1g23m5c3hjtbv.cloudfront.net/#{VMWARE_BOX}.box"
       config.vm.box_download_checksum_type = 'sha256'
       config.vm.box_download_checksum = VMWARE_CHECKSUM256
     else
